@@ -28,6 +28,7 @@ There are three main parts to this portfolio.
 - Use of basic transformations:   translated and rotated the boids
 - An SVG that uses instancing, arcs, and curves:   there is an arc in the boids' tails, a curve in the boids' wings, and <use> tags are used for the boids' wings.
 
+## Credit to CS559
 *This set of web pages forms a "workbook" assignment for 
 CS559, Computer Graphics at the University of Wisconsin for Spring 2025.*
 
