@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- CS559 Workbook Pages - page content &copy; 2021, Michael Gleicher -->
+<!-- This page is part of a Workbook developed for the 
+    CS559 Computer Graphics Class at the University of Wisconsin
+    https://graphics.cs.wisc.edu/Courses/559-sp2025/ -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header"><h1 class="post__title">Page 2: 2 - Train</h1>
+		</header>
+        
+        
+        
+		<div class="content post__content clearfix">
+            <p>In this program, a train moves along a track.
+                The user can start and stop the train and determine the design of the track and the train. For example, the user
+                determines whether the track is represented by a simple curve or looks like an actual track.
+                The user also determines how many cabooses the train has and whether the train releases smoke (or is environmentally friendly).
+            </p>
+            <p>
+                The user can also turn arc-length parameterization on and off. This affects
+                the train's speed and the rail ties. Finally, the tension of the cardinal spline defining the track
+                can be set between -1 and 1.
+            </p>
+            <p>
+                My favorite part of this project is the ability to control the number of cabooses. I am proud that I found a way
+                to iterate through a list of cabooses and draw them in the correct position and orientation rather than draw 
+                each caboose individually, which would limit the number of cabooses drawn. Technically, my code could
+                work with any number of cabooses and the limited range of the slider is arbitrary.
+            </p>
+            <p>This applies the following:</p>
+            <ul>
+                <li><strong>Many objects moving at once:</strong> &nbsp; the different sections of the train move individually</li>
+                <li><strong>Non-trivial 2D Canvas animation:</strong> &nbsp; the train's motion requires curves</li>
+                <li><strong>Use of basic transformations:</strong> &nbsp; the train is translated and rotated</li>
+                <li><strong>A complex curve through multiple points</strong> &nbsp; the train track</li>
+                <li><strong>An object that moves along the complex curve and orients itself appropriately:</strong> &nbsp; the train itself</li>
+                <li><strong>Arc length parameterization:</strong> &nbsp; constant train speed and rail ties</li>
+            </ul>
+
+            <p>
+                <canvas id="canvas2" height=600px width=600px></canvas>
+            </p>
+            <p>
+                <input type="checkbox" value="Start" id="check-simple-track">simple-track</input>
+                &nbsp; <input type="checkbox" value="Start" id="check-arc-length">arc-length</input>
+                &nbsp; <input type="checkbox" value="Start" id="check-smoke">smoke effect</input>
+                <!-- <input type="checkbox" value="Start" id="check-bezier">Use B-Spline instead of Cardinal</input> -->
+            </p>
+            <p>
+                Tension t of Cardinal (for a scaling factor of (1-t)/2 ) &nbsp; <input type="range" value="0" id="tension" min="-1" max="1" step="0.01"/> <b id="tensionScript"></b><br>
+            </p>
+            <p>
+                Number of Cabooses &nbsp; <input type="range" value="2" id="caboose" min="0" max="10" step="1"/> <b id="cabooseScript"></b><br>
+            </p>
+
+            <script src="./2.js" type="module" defer></script>
+            <p>
+                <a href="../../docs/3/" class="Next__Page">Next: 3 - Boids</a>
+            </p>
+			
+		</div>
+	</article>
+</main>
+
+                </div></div>
+    </body>
+</html>

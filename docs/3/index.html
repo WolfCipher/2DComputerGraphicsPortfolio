@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- CS559 Workbook Pages - page content &copy; 2021, Michael Gleicher -->
+<!-- This page is part of a Workbook developed for the 
+    CS559 Computer Graphics Class at the University of Wisconsin
+    https://graphics.cs.wisc.edu/Courses/559-sp2025/ -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+            <main class="main" role="main">
+	        <article class="post">
+		    <header class="post__header"><h1 class="post__title">Page 3: 3 - Boids</h1>
+		    </header>
+        
+        
+        
+		<div class="content post__content clearfix">
+            <p>This is a boid project. The boids bounce off of the boundaries of the box, obstacles, and each other, 
+                and the user can determine the number of boids, the speed of the boids, and 
+                how much their direction changes upon impact with the wall.</p>
+
+            <p>
+                I am proud of the boid design. It's simple yet elegant and effective.
+                I am also happy with how the controls for the number of boids and the speed turned out, 
+                because these controls, in my opinion, are the most fun.
+            </p>
+
+            <p>This applies the following:</p>
+            <ul>
+                <li><strong>Many objects moving at once:</strong> &nbsp; the boids move individually</li>
+                <li><strong>Non-trivial 2D Canvas animation:</strong> &nbsp; the boids bounce off the edges</li>
+                <li><strong>Use of basic transformations:</strong> &nbsp; translated and rotated the boids</li>
+                <li><strong>An SVG that uses instancing, arcs, and curves:</strong> &nbsp; there is an arc in the boids' tails, a curve in the boids' wings, and &lt;use&gt; tags are used for the boids' wings.</li>
+            </ul>
+
+            <p><svg id="svg" height=600px width=600px>
+
+                <!-- boid definition -->
+                <defs>
+                    <g id="boid">
+                        <!-- head -->
+                         <g id="head">
+                            <circle cx="0" cy="0" r="5" fill="black"></circle>
+                            <path d="M 3 4 L 10 0 L 3 -4 Z" fill="black"></path>
+                        </g>
+                        
+                        <!-- wings -->
+                        <g id = "wing" transform="translate(5,0)">
+                            <path d="M -5 0   C -10, 10  -20, 16  -30, 12  C   -20, 8  -10, -2  -5,0   Z" fill="black"></path>
+                        </g>
+
+                        <use href="#wing" transform="scale(1,-1)"></use>
+
+                        <!-- body -->
+                        <circle cx="-10" cy="0" r="8" fill="black"></circle>
+
+                        <!-- tail -->
+                        <path d="M -15 4 L -25 8 L -30 2 L -30 -2 L -25 -8 L -15 -4 Z" fill="black"></path>
+                    </g>
+                </defs>
+
+                <!--
+                    <use href="#boid" id="boid1" x="300" y="300" transform="translate(0,0)"></use>
+                    <use href="#boid" id="boid2" x="240" y="100" transform="rotate(40)"></use>
+                -->
+
+            </svg></p>
+
+            <input type="range" id="boidCount" min="1" max="10" value="10"> Number of Boids &nbsp; <b id="countScript"></b><br>
+            <input type="range" id="speed" min="0" max="10" value="5"> Speed &nbsp; <b id="speedScript"></b><br>
+            <input type="range" id="angle" min="60" max="300" value="95"> Direction Change Upon Impact with the Wall &nbsp; <b id="angleScript"></b><br>
+
+            <script src="./3.js" type="module" defer></script>
+            <!--
+            <a href="../../docs/4/" class="Next__Page">Next: 4 </a>
+            -->
+            
+			
+		</div>
+	        </article>
+            </main>
+
+        </div></div>
+    </body>
+</html>
