@@ -1,4 +1,4 @@
-# Portfolio 1 for CS559, Spring 2025
+# Portfolio 1 for Honors CS559, Spring 2025
 
 There are three main parts to this portfolio.
 1) Feed the Beagle page
